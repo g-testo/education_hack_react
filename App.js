@@ -9,7 +9,7 @@ const items = ({ navigation }) => (
 );
 
 const ImageTabScreen = TabNavigator({
-  Doctor: {
+  Items: {
     screen: items
   }
 }, {

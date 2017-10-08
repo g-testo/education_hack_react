@@ -47,11 +47,10 @@ _answerCheck = (selectionObj, answerObj) => {
   } else {  // if there are no more questions to ask
 
     const data = this.state.data
-    const categories = ['Doctor', 'Companion', 'Secondary', 'Villain', 'Actor'];
     const nav = this.props.navigation;
     const scoreArr = this.state.scoreArr
 
-    this.props._finishedQuizMenu(data, categories, nav, scoreArr)
+    this.props._finishedQuizMenu(data, nav, scoreArr)
 
     this.setState({ scoreArr: [] })
     const shuffledData = this.props._shuffle(data);

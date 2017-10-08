@@ -70,14 +70,10 @@ export default class QuizDataComp extends React.Component {
     return String(Math.round(totalRightAns/totalQuestions*100));
   }
 
-  _finishedQuizMenu = (data, categoryOrder, navigation, scoreArr) => {
+  _finishedQuizMenu = (data, navigation, scoreArr) => {
     const score = this._calcScore(scoreArr);
     const currentRoute = navigation.state.routeName;
     Alert.alert( `Congratulations! \n You scored ${score}%`, 'What would you like to do now?', [
-      {text: 'Continue', onPress: () => {
-        let newRouteIndex = (currentRoute !== categoryOrder[categoryOrder.length - 1] ? (categoryOrder.indexOf(currentRoute) + 1) : 0);
-        navigation.navigate(categoryOrder[newRouteIndex]);
-      }},
       {text: 'Menu', onPress: () => {
         navigation.navigate('DrawerOpen');
       }},
